@@ -1,17 +1,17 @@
 # Simple Todo App
 
-Give a brief description of the project here. Feel free to give it a different name.
+This projects criteria was to take a to do app and transfer code using OOP principles that translate into a functional to do list.
 
 ## Functionality
 
-Give a more detailed explanation of the project and its functionality.
+This to do app has the funcationality to add to do items with descriptions and dates, check off to do items and also delete to do items.
 
 ## Technology
 
-Give a description of the technologies and techniques used. Pictures, GIFs, or screenshots that detail the project features are recommended.
+OOP principles were used on the FormValidator.js document to transfer code and set unique Id's for each to do item.
 
 ## Deployment
 
 This project is deployed on GitHub Pages:
 
-- ADD LINK HERE
+git@github.com:briggzie22/se_project_todo-app.git
