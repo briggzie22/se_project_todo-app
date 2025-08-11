@@ -1,10 +1,9 @@
 class FormValidator {
   constructor(settings, formEl) {
     this._inputSelector = settings.inputSelector;
-    this._formSelector = settings.formSelector;
     this._submitButtonSelector = settings.submitButtonSelector;
     this._inputErrorClass = settings.inputErrorClass;
-    this._errorClass = settings._errorClass;
+    this._errorClass = settings.errorClass;
     this._inactiveButtonClass = settings.inactiveButtonClass;
     this._formEl = formEl;
     this._buttonElement = this._formEl.querySelector(
@@ -76,6 +75,8 @@ class FormValidator {
     this._inputList.forEach((inputElement) => {
       this._hideInputError(inputElement);
     });
+    this._formEl.reset();
+
     this._toggleButtonState();
   }
 }
