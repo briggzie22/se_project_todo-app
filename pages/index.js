@@ -9,12 +9,20 @@ const addTodoForm = addTodoPopup.querySelector(".popup__form");
 const addTodoCloseBtn = addTodoPopup.querySelector(".popup__close");
 const todosList = document.querySelector(".todos__list");
 
+function handleEscDown(evt) {
+  if (evt.key === "Escape") {
+    closeModal(addTodoPopup);
+  }
+}
+
 const openModal = (modal) => {
   modal.classList.add("popup_visible");
+  document.addEventListener("keydown", handleEscDown);
 };
 
 const closeModal = (modal) => {
   modal.classList.remove("popup_visible");
+  document.removeEventListener("keydown", handleEscDown);
 };
 
 const generateTodo = (data) => {
@@ -44,7 +52,6 @@ addTodoForm.addEventListener("submit", (evt) => {
   const values = { name, date, id };
   renderTodo(values);
   closeModal(addTodoPopup);
-  addTodoForm.reset();
   newTodoValidator.resetValidation();
 });
 
