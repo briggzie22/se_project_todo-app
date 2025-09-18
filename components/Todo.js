@@ -1,4 +1,4 @@
-class ToDo {
+class Todo {
   constructor(data, selector, handleCheck, handleDelete) {
     this._data = data;
     this._completed = data.completed;
@@ -62,4 +62,4 @@ class ToDo {
     return this._todoElement;
   }
 }
-export default ToDo;
+export default Todo;

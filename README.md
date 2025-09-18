@@ -16,4 +16,4 @@ OOP principles were used on the FormValidator.js document to transfer code and s
 
 This project is deployed on GitHub Pages:
 
-git@github.com:briggzie22/se_project_todo-app.git
+https://github.com/briggzie22/se_project_todo-app.git
