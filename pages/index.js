@@ -22,6 +22,11 @@ function handleDelete(completed) {
   }
 }
 
+const renderTodo = (item) => {
+  const todoEl = generateTodo(item);
+  section.addItem(todoEl);
+};
+
 const addTodoPopup = new PopupWithForm({
   popupSelector: "#add-todo-popup",
   handleFormSubmit: (inputValues) => {
@@ -32,15 +37,13 @@ const addTodoPopup = new PopupWithForm({
 
     const id = uuidv4();
     const todoData = { name, date, id, completed: false };
-    const todoElement = generateTodo(todoData);
-    section.addItem(todoElement);
+    renderTodo(todoData);
     todoCounter.updateTotal(true);
+    newTodoValidator.resetValidation();
 
     addTodoPopup.close();
-    newTodoValidator.resetValidation();
   },
 });
-addTodoPopup.setEventListeners();
 
 const generateTodo = (data) => {
   const todo = new ToDo(data, "#todo-template", handleCheck, handleDelete);
@@ -49,6 +52,8 @@ const generateTodo = (data) => {
   return todoElement;
 };
 
+addTodoPopup.setEventListeners();
+
 addTodoButton.addEventListener("click", () => {
   addTodoPopup.open();
 });
@@ -56,8 +61,7 @@ addTodoButton.addEventListener("click", () => {
 const section = new Section({
   items: initialTodos,
   renderer: (item) => {
-    const todoEl = generateTodo(item);
-    section.addItem(todoEl);
+    renderTodo(item);
   },
   containerSelector: ".todos__list",
 });
